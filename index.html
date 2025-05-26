@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>Cryptosheep</title>
+  <link rel="stylesheet" href="style.css" />
+  <style>
+    #startButton:disabled {
+      opacity: 0.5;
+      cursor: not-allowed;
+    }
+  </style>
+</head>
+<body>
+  <h1>CA:</h1>
+  <div id="game-container"></div>
+  <div id="merge-bar">
+    <div class="merge-slot"></div>
+    <div class="merge-slot"></div>
+    <div class="merge-slot"></div>
+    <div class="merge-slot"></div>
+    <div class="merge-slot"></div>
+    <div class="merge-slot"></div>
+    <div class="merge-slot"></div>
+  </div>
+  <div id="status-text">Click a tile to move it into slot. Match 3 to clear.</div>
+  <div class="buttons">
+    <button id="startButton" class="btn red">🔁 Restart Level 1</button>
+    <button id="undoButton" class="btn green">↩️ Undo</button>
+  </div>
+
+  <script src="main.js"></script>
+  <script>
+    const startButton = document.getElementById("startButton");
+    const undoButton = document.getElementById("undoButton");
+
+    // 启用按钮并绑定游戏逻辑
+    startButton.onclick = initLevel1;
+    undoButton.onclick = undoStep;
+
+    // 自动启动游戏（可选）
+    window.addEventListener("load", initLevel1);
+  </script>
+</body>
+</html>

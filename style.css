@@ -1,0 +1,109 @@
+body {
+  margin: 0;
+  padding: 0;
+  background-color: #ccf5b1;
+  font-family: Arial, sans-serif;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: flex-start;
+  min-height: 100vh;
+  padding-top: 60px; /* 整体向下偏移 */
+}
+
+h1 {
+  margin-bottom: 20px;
+}
+
+#game-container {
+  position: relative;
+  width: 500px;
+  height: 500px;
+  margin-bottom: 40px;
+}
+
+.card {
+  position: absolute;
+  width: 48px;
+  height: 48px;
+  background-color: white;
+  border-radius: 8px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  font-size: 28px;
+  box-shadow: 2px 2px 5px rgba(0,0,0,0.2);
+  cursor: pointer;
+  transition: transform 0.2s;
+}
+
+.card.disabled {
+  filter: grayscale(100%) brightness(70%);
+  cursor: not-allowed;
+}
+
+#merge-bar {
+  display: flex;
+  justify-content: center;
+  gap: 10px;
+  margin-bottom: 20px;
+  margin-top: 60px; /* ✅ 把合成栏下移远离卡牌 */
+  padding: 10px;
+  background-color: #a36b3a;
+  border-radius: 8px;
+}
+
+#merge-bar div {
+  width: 48px;
+  height: 48px;
+  background-color: #fdeedc;
+  border: 2px dashed #d89e6f;
+  border-radius: 6px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  font-size: 28px;
+}
+
+#status-text {
+  margin-top: 10px;
+  font-weight: bold;
+  text-align: center;
+}
+
+#controls {
+  display: flex;
+  justify-content: center;
+  margin-top: 15px;
+  gap: 15px;
+}
+
+button {
+  padding: 8px 14px;
+  font-size: 14px;
+  border: none;
+  border-radius: 6px;
+  cursor: pointer;
+  box-shadow: 1px 1px 4px rgba(0,0,0,0.2);
+  min-width: 150px;        /* ✅ 增加统一宽度 */
+  text-align: center;      /* ✅ 文本居中 */
+}
+
+
+button:hover {
+  opacity: 0.9;
+}
+
+button:active {
+  transform: scale(0.98);
+}
+
+button:nth-child(1) {
+  background-color: #ff4d4f;
+  color: white;
+}
+
+button:nth-child(2) {
+  background-color: #2ecc71;
+  color: white;
+}
