@@ -10,9 +10,45 @@
       opacity: 0.5;
       cursor: not-allowed;
     }
+
+    .twitter-button {
+      position: fixed;
+      bottom: 20px;
+      left: 50%;
+      transform: translateX(-50%);
+      z-index: 1000;
+      padding: 10px 16px;
+      background-color: #000;
+      color: white;
+      border: none;
+      border-radius: 50px;
+      cursor: pointer;
+      font-weight: bold;
+      font-size: 20px;
+      text-decoration: none;
+      display: flex;
+      align-items: center;
+      gap: 8px;
+      box-shadow: 0 4px 10px rgba(0, 0, 0, 0.3);
+    }
+
+    .twitter-button:hover {
+      background-color: #222;
+    }
+
+    .twitter-icon {
+      width: 20px;
+      height: 20px;
+    }
   </style>
 </head>
 <body>
+  
+  <a href="https://x.com/Cryptosheepsol" class="twitter-button" target="_blank">
+    <img src="https://abs.twimg.com/favicons/twitter.3.ico" class="twitter-icon" alt="X" />
+    
+  </a>
+
   <h1>CA:</h1>
   <div id="game-container"></div>
   <div id="merge-bar">
@@ -35,11 +71,11 @@
     const startButton = document.getElementById("startButton");
     const undoButton = document.getElementById("undoButton");
 
-    // 启用按钮并绑定游戏逻辑
+
     startButton.onclick = initLevel1;
     undoButton.onclick = undoStep;
 
-    // 自动启动游戏（可选）
+
     window.addEventListener("load", initLevel1);
   </script>
 </body>
